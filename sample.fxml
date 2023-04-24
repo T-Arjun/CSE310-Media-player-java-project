@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<!--        #2c3e50;    #800080-->
+<!--<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">-->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="701.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+   <children>
+      <BorderPane layoutX="236.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <MediaView fx:id="mediaView" fitHeight="300.0" fitWidth="600.0" BorderPane.alignment="CENTER" />
+         </center>
+         <bottom>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Slider fx:id="timeSlider" majorTickUnit="10.0" showTickLabels="true">
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </Slider>
+                  <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="701.0" spacing="15.0">
+                     <children>
+                        <Button fx:id="prevBtn" mnemonicParsing="false" onAction="#preBtnClick" />
+                        <Button fx:id="playBtn" mnemonicParsing="false" onAction="#play" />
+                        <Button fx:id="nextBtn" mnemonicParsing="false" onAction="#nextBtnClick" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </bottom>
+         <top>
+            <MenuBar style="-fx-text-fill: black; -fx-background-color: white;" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openFileMenu" style="-fx-text-fill: black; -fx-font-size: 10pt; " text="Open File" />
+<!--                        <MenuItem mnemonicParsing="false" text="Save File" />-->
+                   <!--     <MenuItem mnemonicParsing="false" text="Exit" />  -->
+                      <MenuItem onAction="#exit" style="-fx-text-fill: black; -fx-font-size: 10pt; " text="Exit" />
+
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: black; -fx-font-size: 10pt; " text="Edit">
+                  <items>
+                      <MenuItem mnemonicParsing="false" onAction="#runYoutubeDownloader" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Youtube Downloader" />
+
+                      <MenuItem mnemonicParsing="false" onAction="#toggleFullscreen" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Fullscreen" />
+                      <MenuItem mnemonicParsing="false" onAction="#minimizeVideo" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="MinScreen" />
+                      <MenuItem mnemonicParsing="false" onAction="#play1" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Play " />
+                        <MenuItem mnemonicParsing="false" onAction="#pause1" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Pause" />
+                        <MenuItem mnemonicParsing="false" onAction="#nextBtnClick" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Forward" />
+                        <MenuItem mnemonicParsing="false" onAction="#preBtnClick" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Backward" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" style="-fx-text-fill: black; -fx-font-size: 10pt;" text="About" onAction="#showAboutDialog"/>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
